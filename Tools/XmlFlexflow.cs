@@ -10,19 +10,26 @@ namespace Tools
     /// </summary>
     public class XmlFlexflow
     {
+        /// <summary>
+        /// 配置文件路径名.
+        /// </summary>
+        private static string configFilePath;
 
-        private XmlDocument xd = new XmlDocument();
+        private static XmlDocument xd = new XmlDocument();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="NodeName"></param>
         /// <returns></returns>
-        public string ReadXmlNodeValue(string NodeName)
+        public static string ReadXmlNodeValue(string NodeName)
         {
+            if (string.IsNullOrEmpty(configFilePath)) {
+                MessageBox.Show("请先指定:   configFilePath","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return "";
+            }
             String NodeVale = "";
-            String paths = Environment.CurrentDirectory + "\\flexflow.cfg";
             try {
-                xd.Load(paths);
+                xd.Load(configFilePath);
             }
             catch(Exception ex){
                 MessageBox.Show(ex.ToString(), "提示：", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,11 +50,6 @@ namespace Tools
                 }
             }
             return NodeVale;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public XmlFlexflow() {
         }
     }
 }

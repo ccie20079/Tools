@@ -60,8 +60,7 @@ namespace Tools
         /// <returns></returns>
         public static SocketMess getSocketMessWithSuccessFlag(string mess)
         {
-            XmlFlexflow xff = new XmlFlexflow();
-            string successStr = xff.ReadXmlNodeValue("Tcp_Client_Success");
+            string successStr = XmlFlexflow.ReadXmlNodeValue("Tcp_Client_Success");
             return new SocketMess(successStr + mess);
         }
         /// <summary>
@@ -92,8 +91,7 @@ namespace Tools
         /// <returns></returns>
         public bool ifSuccess()
         {
-            XmlFlexflow xff = new XmlFlexflow();
-            string successStr = xff.ReadXmlNodeValue("Tcp_Client_Success");
+            string successStr = XmlFlexflow.ReadXmlNodeValue("Tcp_Client_Success");
             if (successStr.Equals(this._mess))
             {
                 return true;
@@ -106,8 +104,7 @@ namespace Tools
         /// <param name="mess"></param>
         /// <returns></returns>
         public static bool ifSuccess(string mess) {
-            XmlFlexflow xff = new XmlFlexflow();
-            string successStr = xff.ReadXmlNodeValue("Tcp_Client_Success");
+            string successStr = XmlFlexflow.ReadXmlNodeValue("Tcp_Client_Success");
             if (successStr.Equals(mess))
             {
                 return true;

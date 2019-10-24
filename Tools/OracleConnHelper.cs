@@ -45,10 +45,9 @@ namespace Tools
         }
         #region 初始化连接字符串
         private static void initConStr() {
-            XmlFlexflow xff = new XmlFlexflow();
-            string host_Name =  xff.ReadXmlNodeValue("SERVER_NAME");
-            string user_Id = xff.ReadXmlNodeValue("USER_ID");
-            string password = xff.ReadXmlNodeValue("PASSWORD");
+            string host_Name =  XmlFlexflow.ReadXmlNodeValue("SERVER_NAME");
+            string user_Id = XmlFlexflow.ReadXmlNodeValue("USER_ID");
+            string password = XmlFlexflow.ReadXmlNodeValue("PASSWORD");
 
             oracleConnStr = String.Format(@"Data Source=(DESCRIPTION="
               + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={0} )(PORT=1521)))"

@@ -14,19 +14,19 @@ namespace Tools
     {
         //定义一个SqlServer Connection对象
         private static SqlConnection conn;
-     
         //连接字符串
         private static String connStr;
+        /// <summary>
+        /// 
+        /// </summary>
         public ConnHelper() {
-
         }
         #region 初始化连接字符串
         private static void initConStr() {
-            XmlFlexflow xff = new XmlFlexflow();
-            connStr += "Server=" + xff.ReadXmlNodeValue("SERVER_NAME") + ";";
-            connStr += "database=" + xff.ReadXmlNodeValue("DATABASE_NAME") + ";";
-            connStr += "User ID=" + xff.ReadXmlNodeValue("USER_ID") + ";";
-            connStr += "password=" + xff.ReadXmlNodeValue("PASSWORD");
+            connStr += "Server=" + XmlFlexflow.ReadXmlNodeValue("SERVER_NAME") + ";";
+            connStr += "database=" + XmlFlexflow.ReadXmlNodeValue("DATABASE_NAME") + ";";
+            connStr += "User ID=" + XmlFlexflow.ReadXmlNodeValue("USER_ID") + ";";
+            connStr += "password=" + XmlFlexflow.ReadXmlNodeValue("PASSWORD");
             //conStr += "password=" + QuanSheng.UtilityManager.Security.DecryptString(xff.ReadXmlNodeValue("PASSWORD"));
             //conStr=System.Configuration.ConfigurationManager
         }

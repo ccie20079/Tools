@@ -84,14 +84,12 @@ namespace Tools
             Regex rx = new Regex(pattern);
             return rx.IsMatch(s);
         }
-        XmlFlexflow xff = new XmlFlexflow();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="str"></param>
-        public static void RecordLog(string str)
+        public static void RecordLog(string configFilePath,string str)
         {
-            XmlFlexflow xff = new XmlFlexflow();
             string yy = DateTime.Now.Year.ToString();
             string mm = DateTime.Now.Month.ToString();
             string dd = DateTime.Now.Day.ToString();
@@ -100,7 +98,7 @@ namespace Tools
             if (dd.Length == 1)
                 dd = "0" + dd;
             string date = yy + mm + dd;
-            string logfilename = xff.ReadXmlNodeValue("LogPath") +"\\" + "FOX" + date + ".txt";
+            string logfilename = XmlFlexflow.ReadXmlNodeValue("LogPath") +"\\" + "FOX" + date + ".txt";
             if (File.Exists(logfilename))
             {
                 FileStream fsOutput = new FileStream(logfilename, FileMode.Append, FileAccess.Write);

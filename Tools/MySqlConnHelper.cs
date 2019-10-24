@@ -13,7 +13,10 @@ namespace Tools
         private static MySqlConnection mysqlConn;
         //连接字符串
         private static String connStr;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         //获取mySql连接对象
         public static MySqlConnection getConn()
         {
@@ -22,11 +25,10 @@ namespace Tools
         }
         private static void initConStr()
         {
-            XmlFlexflow xff = new XmlFlexflow();
-            connStr += "Server=" + xff.ReadXmlNodeValue("SERVER_NAME") + ";";
-            connStr += "database=" + xff.ReadXmlNodeValue("DATABASE_NAME") + ";";
-            connStr += "User ID=" + xff.ReadXmlNodeValue("USER_ID") + ";";
-            connStr += "password=" + xff.ReadXmlNodeValue("PASSWORD")+";";
+            connStr += "Server=" + XmlFlexflow.ReadXmlNodeValue("SERVER_NAME") + ";";
+            connStr += "database=" + XmlFlexflow.ReadXmlNodeValue("DATABASE_NAME") + ";";
+            connStr += "User ID=" + XmlFlexflow.ReadXmlNodeValue("USER_ID") + ";";
+            connStr += "password=" + XmlFlexflow.ReadXmlNodeValue("PASSWORD")+";";
             connStr += "Allow User Variables = true;";
             //conStr += "password=" + QuanSheng.UtilityManager.Security.DecryptString(xff.ReadXmlNodeValue("PASSWORD"));
             //conStr=System.Configuration.ConfigurationManager

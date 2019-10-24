@@ -62,11 +62,10 @@ namespace Tools
         /// 
         /// </summary>
         public MyTcpClient() {
-            XmlFlexflow xff = new XmlFlexflow();
-            _serverIP = xff.ReadXmlNodeValue("Tcp_Listener_IP");
-            _port = Int32.Parse(xff.ReadXmlNodeValue("Tcp_Listener_Port"));
-            this._getResultStr = xff.ReadXmlNodeValue("Tcp_Client_Get_Result");
-            this._getSuccessStr = xff.ReadXmlNodeValue("Tcp_Client_Success");
+            _serverIP = XmlFlexflow.ReadXmlNodeValue("Tcp_Listener_IP");
+            _port = Int32.Parse(XmlFlexflow.ReadXmlNodeValue("Tcp_Listener_Port"));
+            this._getResultStr = XmlFlexflow.ReadXmlNodeValue("Tcp_Client_Get_Result");
+            this._getSuccessStr = XmlFlexflow.ReadXmlNodeValue("Tcp_Client_Success");
         }
         /// <summary>
         /// 

@@ -56,9 +56,8 @@ namespace Tools
         /// 
         /// </summary>
         public MyTCPListener() {
-            XmlFlexflow xff = new XmlFlexflow();
-            string _serverIP = xff.ReadXmlNodeValue("Tcp_Listener_IP");
-            Int32 _port = Int32.Parse(xff.ReadXmlNodeValue("Tcp_Listener_Port"));
+            string _serverIP = XmlFlexflow.ReadXmlNodeValue("Tcp_Listener_IP");
+            Int32 _port = Int32.Parse(XmlFlexflow.ReadXmlNodeValue("Tcp_Listener_Port"));
             IPAddress localAddr = IPAddress.Parse(_serverIP);
             _server = new TcpListener(localAddr, _port);
             this.start();

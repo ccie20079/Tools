@@ -101,11 +101,10 @@ namespace Tools
         /// 
         /// </summary>
         public FTPHelper() {
-            XmlFlexflow xff = new XmlFlexflow();
-            this._ftpServerIP = xff.ReadXmlNodeValue("FTP_IPADDR");
-            this.FtpUserID = xff.ReadXmlNodeValue("FTP_USER");
-            this._ftpPassword = xff.ReadXmlNodeValue("FTP_PASSWORD");
-            this._ftpRemotePath = xff.ReadXmlNodeValue("FTP_REMOTE_DIR");
+            this._ftpServerIP = XmlFlexflow.ReadXmlNodeValue("FTP_IPADDR");
+            this.FtpUserID = XmlFlexflow.ReadXmlNodeValue("FTP_USER");
+            this._ftpPassword = XmlFlexflow.ReadXmlNodeValue("FTP_PASSWORD");
+            this._ftpRemotePath = XmlFlexflow.ReadXmlNodeValue("FTP_REMOTE_DIR");
             this._ftpURI = "ftp://" + this._ftpServerIP + "/" + this._ftpRemotePath + "/";
         }
         /// <summary>
@@ -114,9 +113,9 @@ namespace Tools
         public FTPHelper(string remoteDir)
         {
             XmlFlexflow xff = new XmlFlexflow();
-            this._ftpServerIP = xff.ReadXmlNodeValue("FTP_IPADDR");
-            this.FtpUserID = xff.ReadXmlNodeValue("FTP_USER");
-            this._ftpPassword = xff.ReadXmlNodeValue("FTP_PASSWORD");
+            this._ftpServerIP = XmlFlexflow.ReadXmlNodeValue("FTP_IPADDR");
+            this.FtpUserID = XmlFlexflow.ReadXmlNodeValue("FTP_USER");
+            this._ftpPassword = XmlFlexflow.ReadXmlNodeValue("FTP_PASSWORD");
             this._ftpRemotePath = remoteDir;
             this._ftpURI = "ftp://" + this._ftpServerIP + "/" + this._ftpRemotePath + "/";
         }
