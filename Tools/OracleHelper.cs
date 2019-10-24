@@ -108,23 +108,23 @@ namespace Tools
             cmd.CommandType = CommandType.StoredProcedure;
             CreateCommand(cmd, conn, null, procName, cmdParms);
             try
-                {
+            {
                     val = cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "提示：", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    throw new Exception(ex.ToString());
-                }
-                finally
-                {
-                    cmd.Parameters.Clear();
-                    cmd.Dispose();
-                }
-                return val;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "提示：", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+            }
+            return val;
         }
         /// <summary>
-        /// 带事物处理的command
+        /// 带事务处理的command
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="con"></param>

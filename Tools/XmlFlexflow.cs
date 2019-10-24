@@ -13,7 +13,7 @@ namespace Tools
         /// <summary>
         /// 配置文件路径名.
         /// </summary>
-        private static string configFilePath;
+        public static string configFilePath;
 
         private static XmlDocument xd = new XmlDocument();
         /// <summary>
